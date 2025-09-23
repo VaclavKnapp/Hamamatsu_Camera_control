@@ -4,6 +4,8 @@ import time
 import threading
 import cv2
 import pydase
+import pydase.units as u
+import pydase.components as pyc
 import weakref
 from typing import List
 from pydase.components import Image
@@ -18,6 +20,10 @@ from pylablib.devices.DCAM import DCAMTimeoutError
 import gc
 
 logging.getLogger('pydase').setLevel(logging.WARNING)
+
+class CameraStatus(pyc.ColouredEnum):
+    STANDBY = "#FF0000"  # red
+    READY = "#00FF00"  # green
 
 class ROI(pydase.DataService):
     def __init__(self, parent, name: str, x: int = 0, y: int = 0, width: int = 100, height: int = 100, enabled: bool = True):
@@ -106,9 +112,10 @@ class PhotoelectronCamera(pydase.DataService):
     def __init__(self, frames_per_chunk=20):
         super().__init__()
         self._camera = None
-        self._exposure_time = 0.2
+        self._exposure_time = 200000 * u.units.us  # Equivalent to 0.2 seconds
         self._frames_per_chunk = frames_per_chunk
         self.Camera_view = Image()
+        self.set_standby_image()
         self._p_e = 0.0
         self._p_e_p = 0.0
         self._fps = 0.0
@@ -125,11 +132,31 @@ class PhotoelectronCamera(pydase.DataService):
         self._top_crop_percent = 0.0
         self._bottom_crop_percent = 0.0
         self._scan_mode = "UltraQuiet"  # Default; options: "Standard", "UltraQuiet"
+        self._status = CameraStatus.STANDBY
         if os.path.exists("rois.json"):
             self.load_rois()
 
     @property
-    def exposure_time(self):
+    def status(self) -> CameraStatus:
+        return self._status
+
+    def set_standby_image(self):
+        height, width = 300, 400  # Arbitrary size for standby image
+        img = np.zeros((height, width), dtype=np.uint8)  # Grayscale black image
+        text = "Camera in stand-by mode"
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        font_scale = 1
+        thickness = 2
+        size = cv2.getTextSize(text, font, font_scale, thickness)[0]
+        x = (width - size[0]) // 2
+        y = (height + size[1]) // 2
+        cv2.putText(img, text, (x, y), font, font_scale, 255, thickness)
+        ret, buf = cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, 50])
+        if ret:
+            self.Camera_view.load_from_base64(base64.b64encode(buf.tobytes()))
+
+    @property
+    def exposure_time(self) -> u.Quantity:
         return self._exposure_time
 
     @property
@@ -161,10 +188,11 @@ class PhotoelectronCamera(pydase.DataService):
         return self._scan_mode
 
     @exposure_time.setter
-    def exposure_time(self, value):
-        self._exposure_time = float(value)
-        if self._running and self._camera is not None:
-            self._camera.set_attribute_value("EXPOSURE_TIME", self._exposure_time)
+    def exposure_time(self, value: u.Quantity):
+        self._exposure_time = value
+        if self._running:
+            self.stop_camera()
+            self.start_camera()
 
     @external_trigger.setter
     def external_trigger(self, value):
@@ -260,6 +288,8 @@ class PhotoelectronCamera(pydase.DataService):
 
     @frontend
     def stop_camera(self):
+        self.set_standby_image()
+        self._status = CameraStatus.STANDBY
         self._running = False
         self._logging = False
         if self._camera is not None:
@@ -297,7 +327,6 @@ class PhotoelectronCamera(pydase.DataService):
         vpos = top_lines
         hpos = 0
         hsize = full_width
-
         # Use pylablib's set_roi method for proper handling
         try:
             self._camera.set_roi(hstart=hpos, hend=hpos + hsize, vstart=vpos, vend=vpos + vsize, hbin=1, vbin=1)
@@ -309,7 +338,6 @@ class PhotoelectronCamera(pydase.DataService):
             vsize = full_height
             hpos = 0
             hsize = full_width
-
         subarray_on = vsize < full_height
         return subarray_on, hpos, hsize, vpos, vsize
 
@@ -322,7 +350,6 @@ class PhotoelectronCamera(pydase.DataService):
                 self._camera.set_attribute_value("SCAN_MODE", scan_value)
             except Exception as e:
                 print(f"Error setting SCAN_MODE: {e}. Using default.")
-
             if self._external_trigger:
                 self._camera.set_attribute_value("TRIGGER_SOURCE", 2.0)  # 'EXTERNAL'
                 self._camera.set_attribute_value("TRIGGER_MODE", 1.0)  # 'NORMAL'
@@ -330,8 +357,7 @@ class PhotoelectronCamera(pydase.DataService):
                 self._camera.set_attribute_value("TRIGGER_POLARITY", 2.0)  # 'POSITIVE'
             else:
                 self._camera.set_attribute_value("TRIGGER_SOURCE", 1.0)  # 'INTERNAL'
-            self._camera.set_attribute_value("EXPOSURE_TIME", self._exposure_time)
-
+            self._camera.set_attribute_value("EXPOSURE_TIME", self.exposure_time.to(u.units.s).magnitude)
             try:
                 coeff = self._camera.get_attribute_value("CONVERSION_FACTOR_COEFF")
                 offset = self._camera.get_attribute_value("CONVERSION_FACTOR_OFFSET")
@@ -339,23 +365,19 @@ class PhotoelectronCamera(pydase.DataService):
                 print(f"Error getting conversion factors: {e}. Using default values.")
                 coeff = 0.107
                 offset = 0
-
             subarray_on, hpos, hsize, vpos, vsize = self._set_subarray()
-
             self._camera.setup_acquisition(mode="sequence", nframes=self._frames_per_chunk)
             self._camera.start_acquisition()
-
+            self._status = CameraStatus.READY
             full_width, full_height = self._camera.get_detector_size()
             prev_time = time.time()
             last_display_time = 0.0
-
             self._photoelectrons = np.empty((vsize, hsize), dtype=np.float32)
             temp_display = np.empty((vsize, hsize), dtype=np.uint8)
             self._display_frame = np.empty((full_height, full_width), dtype=np.uint8)
             new_height = int(full_height * 0.25)
             new_width = int(full_width * 0.25)
             self._display_small = np.empty((new_height, new_width), dtype=np.uint8)
-
             while self._running:
                 try:
                     got_frame = self._camera.wait_for_frame(timeout=0.1, error_on_stopped=False)
@@ -364,19 +386,15 @@ class PhotoelectronCamera(pydase.DataService):
                     frame = self._camera.read_newest_image()
                     if frame is None:
                         continue
-
                     current_time = time.time()
                     self._fps = 1 / (current_time - prev_time) if self._frame_count > 0 else 0.0
                     prev_time = current_time
-
                     self._photoelectrons[:] = frame.astype(np.float32)
                     self._photoelectrons -= offset
                     self._photoelectrons *= coeff
                     np.maximum(self._photoelectrons, 0, out=self._photoelectrons)
-
                     self._p_e = float(np.sum(self._photoelectrons))
                     self._p_e_p = float(np.mean(self._photoelectrons))
-
                     for roi in self.rois:
                         if roi.enabled:
                             roi_x, roi_y, roi_w, roi_h = roi.x, roi.y, roi.width, roi.height
@@ -394,9 +412,7 @@ class PhotoelectronCamera(pydase.DataService):
                             else:
                                 roi._total_pe = 0.0
                                 roi._mean_pe_per_pixel = 0.0
-
                     self._frame_count += 1
-
                     if self._logging:
                         for key in ["frame_index", "photoelectron_count", "photoelectron_counts_pp"]:
                             ds = self._h5_full[key]
@@ -404,7 +420,6 @@ class PhotoelectronCamera(pydase.DataService):
                         self._h5_full["frame_index"][-1] = self._frame_count
                         self._h5_full["photoelectron_count"][-1] = self._p_e
                         self._h5_full["photoelectron_counts_pp"][-1] = self._p_e_p
-
                         for roi in self.rois:
                             if roi.enabled:
                                 h5 = self._h5_rois[roi.name]
@@ -414,7 +429,6 @@ class PhotoelectronCamera(pydase.DataService):
                                 h5["frame_index"][-1] = self._frame_count
                                 h5["photoelectron_count"][-1] = roi._total_pe
                                 h5["photoelectron_counts_pp"][-1] = roi._mean_pe_per_pixel
-
                     if current_time - last_display_time >= 1.0:
                         max_val = self._photoelectrons.max()
                         if max_val > 0:
@@ -423,19 +437,15 @@ class PhotoelectronCamera(pydase.DataService):
                             temp_display[:] = self._photoelectrons.astype(np.uint8)
                         else:
                             temp_display.fill(0)
-
                         self._display_frame.fill(0)
                         self._display_frame[vpos : vpos + vsize, hpos : hpos + hsize] = temp_display
-
                         if subarray_on:
                             cv2.line(self._display_frame, (0, vpos), (full_width - 1, vpos), 255, 2)
                             cv2.line(self._display_frame, (0, vpos + vsize), (full_width - 1, vpos + vsize), 255, 2)
-
                         for i, roi in enumerate(self.rois):
                             if roi.enabled:
                                 cv2.rectangle(self._display_frame, (roi.x, roi.y), (roi.x + roi.width, roi.y + roi.height), 255, 2)
                                 cv2.putText(self._display_frame, f"{roi.name} ({i+1})", (roi.x, roi.y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.75, 255, 2)
-
                         cv2.resize(self._display_frame, (new_width, new_height), dst=self._display_small, interpolation=cv2.INTER_AREA)
                         ret, buf = cv2.imencode(".jpg", self._display_small, [cv2.IMWRITE_JPEG_QUALITY, 50])
                         if ret:
@@ -443,11 +453,9 @@ class PhotoelectronCamera(pydase.DataService):
                         else:
                             print("Failed to encode frame.")
                         last_display_time = current_time
-
                     gc.collect()
                     if self._frame_count % 10 == 0:
                         gc.collect()
-
                 except DCAMTimeoutError:
                     continue
                 except Exception as e:
@@ -460,6 +468,7 @@ class PhotoelectronCamera(pydase.DataService):
                 except Exception as e:
                     print(f"Error closing camera: {e}")
             self._camera = None
+            self._status = CameraStatus.STANDBY
 
 if __name__ == "__main__":
     service_instance = PhotoelectronCamera(frames_per_chunk=20)
