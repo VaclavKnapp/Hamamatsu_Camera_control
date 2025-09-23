@@ -1,0 +1,1167 @@
+{
+    "Camera_view": {
+        "displayName": "Camera_view",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.format": {
+        "displayName": "format",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.load_from_base64": {
+        "displayName": "load_from_base64",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.load_from_matplotlib_figure": {
+        "displayName": "load_from_matplotlib_figure",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.load_from_path": {
+        "displayName": "load_from_path",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.load_from_url": {
+        "displayName": "load_from_url",
+        "display": true,
+        "displayOrder": 0
+    },
+    "Camera_view.value": {
+        "displayName": "value",
+        "display": true,
+        "displayOrder": 0
+    },
+    "FPS": {
+        "displayName": "FPS",
+        "display": true,
+        "displayOrder": 1
+    },
+    "photoelectron_counts": {
+        "displayName": "photoelectron_counts",
+        "display": true,
+        "displayOrder": 2
+    },
+    "photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 3
+    },
+    "top_crop_percent": {
+        "displayName": "top_crop_percent",
+        "display": true,
+        "displayOrder": 4
+    },
+    "bottom_crop_percent": {
+        "displayName": "bottom_crop_percent",
+        "display": true,
+        "displayOrder": 5
+    },
+    "exposure_time": {
+        "displayName": "exposure_time",
+        "display": true,
+        "displayOrder": 6
+    },
+    "add_roi": {
+        "displayName": "add_roi",
+        "display": true,
+        "displayOrder": 7
+    },
+    "load_rois": {
+        "displayName": "load_rois",
+        "display": true,
+        "displayOrder": 8
+    },
+    "external_trigger": {
+        "displayName": "external_trigger",
+        "display": true,
+        "displayOrder": 9
+    },
+    "save_rois": {
+        "displayName": "save_rois",
+        "display": true,
+        "displayOrder": 10
+    },
+    "scan_mode": {
+        "displayName": "scan_mode",
+        "display": false,
+        "displayOrder": 11
+    },
+    "start_camera": {
+        "displayName": "start_camera",
+        "display": true,
+        "displayOrder": 12
+    },
+    "stop_camera": {
+        "displayName": "stop_camera",
+        "display": true,
+        "displayOrder": 13
+    },
+    "start_measurement": {
+        "displayName": "start_measurement",
+        "display": true,
+        "displayOrder": 14
+    },
+    "stop_measurement": {
+        "displayName": "stop_measurement",
+        "display": true,
+        "displayOrder": 15
+    },
+    "rois": {
+        "displayName": "rois",
+        "display": true,
+        "displayOrder": 16
+    },
+    "rois[0]": {
+        "displayName": "rois[0]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[0].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[0].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[0].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[0].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[0].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[0].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[0].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[0].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[0].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[1]": {
+        "displayName": "rois[1]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[1].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[1].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[1].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[1].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[1].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[1].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[1].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[1].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[1].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[2]": {
+        "displayName": "rois[2]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[2].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[2].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[2].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[2].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[2].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[2].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[2].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[2].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[2].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[3]": {
+        "displayName": "rois[3]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[3].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[3].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[3].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[3].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[3].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[3].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[3].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[3].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[3].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[4]": {
+        "displayName": "rois[4]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[4].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[4].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[4].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[4].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[4].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[4].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[4].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[4].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[4].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[5]": {
+        "displayName": "rois[5]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[5].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[5].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[5].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[5].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[5].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[5].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[5].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[5].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[5].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[6]": {
+        "displayName": "rois[6]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[6].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[6].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[6].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[6].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[6].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[6].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[6].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[6].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[6].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[7]": {
+        "displayName": "rois[7]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[7].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[7].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[7].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[7].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[7].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[7].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[7].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[7].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[7].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[8]": {
+        "displayName": "rois[8]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[8].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[8].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[8].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[8].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[8].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[8].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[8].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[8].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[8].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[9]": {
+        "displayName": "rois[9]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[9].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[9].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[9].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[9].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[9].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[9].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[9].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[9].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[9].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[10]": {
+        "displayName": "rois[10]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[10].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[10].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[10].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[10].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[10].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[10].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[10].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[10].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[10].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[11]": {
+        "displayName": "rois[11]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[11].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[11].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[11].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[11].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[11].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[11].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[11].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[11].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[11].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[12]": {
+        "displayName": "rois[12]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[12].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[12].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[12].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[12].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[12].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[12].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[12].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[12].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[12].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[13]": {
+        "displayName": "rois[13]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[13].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[13].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[13].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[13].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[13].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[13].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[13].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[13].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[13].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[14]": {
+        "displayName": "rois[14]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[14].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[14].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[14].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[14].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[14].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[14].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[14].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[14].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[14].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[15]": {
+        "displayName": "rois[15]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[15].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[15].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[15].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[15].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[15].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[15].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[15].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[15].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[15].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[16]": {
+        "displayName": "rois[16]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[16].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[16].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[16].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[16].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[16].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[16].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[16].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[16].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[16].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[17]": {
+        "displayName": "rois[17]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[17].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[17].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[17].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[17].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[17].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[17].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[17].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[17].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[17].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[18]": {
+        "displayName": "rois[18]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[18].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[18].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[18].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[18].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[18].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[18].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[18].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[18].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[18].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[19]": {
+        "displayName": "rois[19]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[19].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[19].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[19].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[19].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[19].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[19].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[19].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[19].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[19].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    },
+    "rois[20]": {
+        "displayName": "rois[20]",
+        "display": true,
+        "displayOrder": 1
+    },
+    "rois[20].enabled": {
+        "displayName": "enabled",
+        "display": true,
+        "displayOrder": 2
+    },
+    "rois[20].delete": {
+        "displayName": "delete",
+        "display": true,
+        "displayOrder": 3
+    },
+    "rois[20].name": {
+        "displayName": "name",
+        "display": true,
+        "displayOrder": 4
+    },
+    "rois[20].height": {
+        "displayName": "height",
+        "display": true,
+        "displayOrder": 5
+    },
+    "rois[20].width": {
+        "displayName": "width",
+        "display": true,
+        "displayOrder": 6
+    },
+    "rois[20].x": {
+        "displayName": "x",
+        "display": true,
+        "displayOrder": 7
+    },
+    "rois[20].y": {
+        "displayName": "y",
+        "display": true,
+        "displayOrder": 8
+    },
+    "rois[20].photoelectron_count": {
+        "displayName": "photoelectron_count",
+        "display": true,
+        "displayOrder": 9
+    },
+    "rois[20].photoelectron_counts_pp": {
+        "displayName": "photoelectron_counts_pp",
+        "display": true,
+        "displayOrder": 10
+    }
+}
