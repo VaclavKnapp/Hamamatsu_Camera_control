@@ -1,4 +1,6 @@
-# README for Hamamatsu ORCA-Quest qCMOS Camera C15550-20UP Control Code
+# Hamamatsu ORCA-Quest qCMOS Camera C15550-20UP Control Code
+
+![Image_1](https://hub.hamamatsu.com/us/en/ask-an-engineer/imaging/orca-quest-questions-and-answers/_jcr_content/root/container/container_1049569944/container/image.coreimg.jpeg/1732078973730/fig01-orca.jpeg)
 
 ## Overview
 
