@@ -34,85 +34,90 @@
         "display": true,
         "displayOrder": 0
     },
+    "status": {
+        "displayName": "status",
+        "display": true,
+        "displayOrder": 1
+    },
     "FPS": {
         "displayName": "FPS",
         "display": true,
-        "displayOrder": 1
+        "displayOrder": 2
     },
     "photoelectron_counts": {
         "displayName": "photoelectron_counts",
         "display": true,
-        "displayOrder": 2
+        "displayOrder": 3
     },
     "photoelectron_counts_pp": {
         "displayName": "photoelectron_counts_pp",
         "display": true,
-        "displayOrder": 3
+        "displayOrder": 4
     },
     "top_crop_percent": {
         "displayName": "top_crop_percent",
         "display": true,
-        "displayOrder": 4
+        "displayOrder": 5
     },
     "bottom_crop_percent": {
         "displayName": "bottom_crop_percent",
         "display": true,
-        "displayOrder": 5
+        "displayOrder": 6
     },
     "exposure_time": {
         "displayName": "exposure_time",
         "display": true,
-        "displayOrder": 6
+        "displayOrder": 7
     },
     "add_roi": {
         "displayName": "add_roi",
         "display": true,
-        "displayOrder": 7
+        "displayOrder": 8
     },
     "load_rois": {
         "displayName": "load_rois",
         "display": true,
-        "displayOrder": 8
+        "displayOrder": 9
     },
     "external_trigger": {
         "displayName": "external_trigger",
         "display": true,
-        "displayOrder": 9
+        "displayOrder": 10
     },
     "save_rois": {
         "displayName": "save_rois",
         "display": true,
-        "displayOrder": 10
+        "displayOrder": 11
     },
     "scan_mode": {
         "displayName": "scan_mode",
         "display": false,
-        "displayOrder": 11
+        "displayOrder": 12
     },
     "start_camera": {
         "displayName": "start_camera",
         "display": true,
-        "displayOrder": 12
+        "displayOrder": 13
     },
     "stop_camera": {
         "displayName": "stop_camera",
         "display": true,
-        "displayOrder": 13
+        "displayOrder": 14
     },
     "start_measurement": {
         "displayName": "start_measurement",
         "display": true,
-        "displayOrder": 14
+        "displayOrder": 15
     },
     "stop_measurement": {
         "displayName": "stop_measurement",
         "display": true,
-        "displayOrder": 15
+        "displayOrder": 16
     },
     "rois": {
         "displayName": "rois",
         "display": true,
-        "displayOrder": 16
+        "displayOrder": 17
     },
     "rois[0]": {
         "displayName": "rois[0]",
@@ -1163,5 +1168,9 @@
         "displayName": "photoelectron_counts_pp",
         "display": true,
         "displayOrder": 10
+    },
+    "set_standby_image": {
+        "displayName": "set_standby_image",
+        "display": true
     }
 }
