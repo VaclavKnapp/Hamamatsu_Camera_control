@@ -28,6 +28,8 @@ The code requires the following Python libraries:
 
 **Installation Notes:**
 - Install via pip: `pip install numpy opencv-python pydase pylablib h5py`.
+- Create a virtual environment (Windows): `python -m venv Hamamatsu_cam`.
+- Activate virtual environment (Windows): `.\Hamamatsu_cam\Scripts\activate`.
 - The DCAM-API must be installed separately from Hamamatsu's software media or website, as it provides the driver for camera communication. Ensure the camera is connected via CoaXPress or USB and recognized by the system (e.g., via DCAM-API tools).
 - API for windows can be installed through this link: 'https://www.hamamatsu.com/eu/en/product/cameras/software/driver-software/dcam-api-for-windows.html'
 - No additional packages can be installed at runtime due to the code interpreter environment constraints.
